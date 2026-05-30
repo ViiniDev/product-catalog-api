@@ -1,5 +1,7 @@
 # Product Catalog API
 
+[![CI](https://github.com/ViiniDev/product-catalog-api/actions/workflows/ci.yml/badge.svg)](https://github.com/ViiniDev/product-catalog-api/actions/workflows/ci.yml)
+
 API REST de catalogo de produtos com cache Redis, criada para demonstrar performance, paginacao e ambiente conteinerizado.
 
 ## Funcionalidades
@@ -12,6 +14,8 @@ API REST de catalogo de produtos com cache Redis, criada para demonstrar perform
 - Execucao local com H2.
 - Execucao conteinerizada com PostgreSQL e Redis.
 - Documentacao via Swagger UI.
+- Testes de integracao para categoria, produto, busca paginada e validacao.
+- CI com GitHub Actions para testes e build Docker.
 
 ## Tecnologias
 
@@ -25,6 +29,8 @@ API REST de catalogo de produtos com cache Redis, criada para demonstrar perform
 - H2 Database
 - Docker e Docker Compose
 - Swagger/OpenAPI
+- JUnit e MockMvc
+- GitHub Actions
 - Maven
 
 ## Como Executar Localmente
@@ -85,3 +91,21 @@ Criar produto:
 - Paginacao com Spring Data.
 - Invalidacao de cache ao alterar dados.
 - API, banco e cache subindo juntos com Docker Compose.
+- Testes de integracao para fluxo de catalogo.
+- Pipeline de CI para validar testes e build Docker.
+
+## Testes E CI
+
+```bash
+mvn test
+```
+
+Os testes validam:
+
+- criacao e listagem de categorias;
+- criacao de produto associado a categoria;
+- busca paginada de produtos por nome;
+- validacao de preco invalido;
+- inicializacao do contexto Spring.
+
+O workflow em `.github/workflows/ci.yml` executa os testes Maven e o build Docker via Docker Compose.
