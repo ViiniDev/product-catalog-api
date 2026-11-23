@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/ViiniDev/product-catalog-api/actions/workflows/ci.yml/badge.svg)](https://github.com/ViiniDev/product-catalog-api/actions/workflows/ci.yml)
 
-API REST de catalogo de produtos com cache Redis, criada para demonstrar performance, paginacao e ambiente conteinerizado.
+API REST de catálogo de produtos com cache Redis, criada para demonstrar performance, paginação e ambiente conteinerizado.
 
 ## Funcionalidades
 
@@ -10,11 +10,11 @@ API REST de catalogo de produtos com cache Redis, criada para demonstrar perform
 - Cadastro e busca paginada de produtos.
 - Filtro de produtos por nome.
 - Cache nas consultas de produtos.
-- Invalidacao de cache ao cadastrar novo produto.
-- Execucao local com H2.
-- Execucao conteinerizada com PostgreSQL e Redis.
-- Documentacao via Swagger UI.
-- Testes de integracao para categoria, produto, busca paginada e validacao.
+- Invalidação de cache ao cadastrar novo produto.
+- Execução local com H2.
+- Execução conteinerizada com PostgreSQL e Redis.
+- Documentação via Swagger UI.
+- Testes de integração para categoria, produto, busca paginada e validação.
 - CI com GitHub Actions para testes e build Docker.
 
 ## Tecnologias
@@ -88,13 +88,13 @@ Criar produto:
 
 - Uso de cache com Spring Cache.
 - Redis como infraestrutura auxiliar.
-- Paginacao com Spring Data.
-- Invalidacao de cache ao alterar dados.
+- Paginação com Spring Data.
+- Invalidação de cache ao alterar dados.
 - API, banco e cache subindo juntos com Docker Compose.
-- Testes de integracao para fluxo de catalogo.
+- Testes de integração para fluxo de catálogo.
 - Pipeline de CI para validar testes e build Docker.
 
-## Testes E CI
+## Testes e CI
 
 ```bash
 mvn test
@@ -102,10 +102,10 @@ mvn test
 
 Os testes validam:
 
-- criacao e listagem de categorias;
-- criacao de produto associado a categoria;
+- criação e listagem de categorias;
+- criação de produto associado a categoria;
 - busca paginada de produtos por nome;
-- validacao de preco invalido;
-- inicializacao do contexto Spring.
+- validação de preço inválido;
+- inicialização do contexto Spring.
 
 O workflow em `.github/workflows/ci.yml` executa os testes Maven e o build Docker via Docker Compose.
